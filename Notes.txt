@@ -1,0 +1,583 @@
+The terms **API** (Application Programming Interface) and **Web Service** are often used interchangeably, but they have distinct meanings and functions,
+even though they may overlap in practice. Here’s a detailed comparison:
+
+### 1. **Definition:**
+
+- **API**:
+  - An **API** is a set of rules that allows one piece of software to interact with another.
+  - It provides a way to request data or functionality from another application or system.
+  - APIs can be used over various communication protocols, including HTTP, TCP, etc.
+
+- **Web Service**:
+  - A **Web Service** is a specific kind of API that operates over the web (HTTP) and is designed for machine-to-machine interaction.
+  - It is a network-accessible API that adheres to specific standards, often involving XML, JSON, or similar formats.
+
+### 2. **Communication Protocols:**
+
+- **API**:
+  - Can use various protocols like HTTP, HTTPS, WebSockets, FTP, or even direct libraries for inter-process communication.
+  
+- **Web Service**:
+  - Typically operates over HTTP or HTTPS.
+  - Examples of web service protocols include **SOAP** (which uses XML) and **REST** (which often uses JSON).
+
+### 3. **Types:**
+
+- **API**:
+  - **REST API**: Uses standard HTTP methods and URL patterns to interact with resources (typically stateless).
+  - **GraphQL API**: A query language for APIs that allows clients to request specific data.
+  - **Library-based APIs**: Communication happens within the same application using function calls (e.g., Java or Python libraries).
+  
+- **Web Service**:
+  - **SOAP Web Service**: Uses SOAP protocol, which is XML-based and has strict standards for request and response formatting.
+  - **RESTful Web Service**: Uses REST principles, generally lighter and less strict than SOAP, with data often exchanged in JSON or XML.
+  
+### 4. **Architecture Style:**
+
+- **API**:
+  - Broader in scope; could be **local** (within the same system), **remote**, or **web-based**.
+  
+- **Web Service**:
+  - A specific kind of API that is always remote and accessed over the network (via the web).
+
+### 5. **Statefulness:**
+
+- **API**:
+  - Can be **stateless** (e.g., most REST APIs) or **stateful** (e.g., some library-based APIs where the state is maintained).
+  
+- **Web Service**:
+  - Generally, **SOAP Web Services** can maintain a state, whereas **RESTful Web Services** are **stateless**.
+
+### 6. **Usage:**
+
+- **API**:
+  - Used in a wide variety of contexts beyond just web services. Examples include:
+    - **Operating System APIs**: Interact with OS features (e.g., Windows API).
+    - **Library APIs**: To interact with a third-party library within the same application (e.g., TensorFlow API).
+    - **Database APIs**: Used for database interactions.
+  
+- **Web Service**:
+  - Used for network-based interactions, typically over the internet. Example use cases:
+    - Interactions between cloud-based systems.
+    - Service-oriented architecture (SOA) for enterprise-level applications.
+
+### 7. **Examples:**
+
+- **API**:
+  - Google Maps API (used to embed maps in applications).
+  - Twitter API (used to fetch or post tweets programmatically).
+  - Windows API (used to interact with the Windows OS).
+  
+- **Web Service**:
+  - SOAP-based web services, often used in enterprise applications (e.g., for secure transactions in banking).
+  - RESTful web services, such as those used by companies like GitHub, Twitter, or OpenWeatherMap to expose their data over the web.
+
+### 8. **Performance:**
+
+- **API**:
+  - Performance depends on the specific type of API and the underlying technology.
+  - For example, local APIs (within the same system) tend to have faster response times compared to network-based APIs.
+  
+- **Web Service**:
+  - Web services tend to be slower than local APIs due to the overhead of network communication and data exchange over the web.
+
+### 9. **Security:**
+
+- **API**:
+  - Security mechanisms can vary depending on the type of API. Common security mechanisms include API keys, OAuth, or JWT for token-based security.
+  
+- **Web Service**:
+  - SOAP Web Services provide built-in standards for security (e.g., WS-Security for message encryption and authentication).
+  - RESTful web services commonly use HTTPS and OAuth for secure communication and user authentication.
+
+### Summary:
+
+| **Feature**            | **API**                              | **Web Service**                   |
+|------------------------|--------------------------------------|-----------------------------------|
+| **Definition**          | Interface to allow communication between different software applications | A specific type of API accessible over the web |
+| **Protocols**           | Can use multiple protocols (HTTP, TCP, etc.) | Primarily uses HTTP/HTTPS |
+| **Data Format**         | JSON, XML, plain text, binary, etc.  | Typically XML (SOAP) or JSON (REST) |
+| **Use Case**            | Broader use cases (local or remote)  | Always network-based, typically remote |
+| **Statefulness**        | May be stateful or stateless         | Stateless (REST), Stateful (SOAP) |
+| **Examples**            | Twitter API, Google Maps API         | SOAP Web Service, RESTful Web Services |
+
+### In Conclusion:
+- **APIs** are a broad concept that encompasses any way two pieces of software communicate, while **Web Services** are a specific subset of APIs that function over the web and follow particular protocols.
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+API Vs Web Service, API which is not a webservice :
+
+
+An **API that is not a Web Service** refers to an Application Programming Interface that does not rely on communication over the web (HTTP/HTTPS). APIs can exist within an application, between local software components, or even across different machines without using web protocols.
+
+Here are some examples of APIs that are not web services:
+
+### 1. **Operating System APIs**:
+Operating systems like Windows, Linux, and macOS provide APIs to allow applications to interact with system resources like files, memory, hardware, and processes.
+
+- **Example**: 
+  - **Windows API** (WinAPI): It allows applications to interact with the Windows OS, accessing things like file systems, windows management, networking, and device control.
+  - **POSIX API**: A set of standards for Unix-like operating systems that enables application developers to write programs that can interact with the OS's kernel.
+
+### 2. **Library/API within the Same Application**:
+Many APIs are used to interact with libraries or frameworks within the same application, where communication happens via direct function calls, not over a network.
+
+- **Example**: 
+  - **Java API**: Allows programs to call methods and classes within the Java Standard Library to perform tasks like file handling, database access, and threading without any network communication.
+  - **TensorFlow API**: A machine learning library that offers APIs in Python or C++ to build and execute models within the same environment, without requiring any web communication.
+
+### 3. **Database APIs**:
+APIs that interact directly with a database, often through a driver, without using web services or HTTP. These APIs are typically designed to work with specific database management systems (DBMS).
+
+- **Example**:
+  - **JDBC (Java Database Connectivity)**: Allows Java applications to communicate with databases like MySQL or PostgreSQL directly, without needing web-based communication.
+  - **ODBC (Open Database Connectivity)**: A standard API for accessing database management systems in a language-independent manner.
+
+### 4. **Hardware APIs**:
+Hardware vendors provide APIs that allow software to interact with the hardware without requiring web services.
+
+- **Example**:
+  - **DirectX API**: A collection of APIs for handling tasks related to multimedia, especially game programming and video, on Microsoft platforms. It interacts directly with the GPU and other hardware components.
+  - **OpenGL**: A cross-platform API for rendering 2D and 3D vector graphics directly interacting with the graphics hardware.
+
+
+### Summary:
+While **Web Services** are a type of **API** that operates over the internet (HTTP/HTTPS),
+many **APIs** do not involve web communication. These APIs facilitate communication between software components, libraries, hardware, or databases locally or over non-web-based protocols.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+XML (eXtensible Markup Language) is a markup language used to encode documents in a format that is both human-readable and machine-readable. It was designed to store and transport data, making it a widely used format for exchanging data over the internet. Some key features of XML include:
+
+1. **Self-descriptive**: XML tags provide information about the data itself.
+2. **Hierarchical Structure**: Data is organized in a tree-like structure using elements (tags).
+3. **Platform-Independent**: XML is plain text, so it can be read and written by various systems and programming languages.
+4. **Custom Tags**: Unlike HTML, XML allows users to define their own tags, making it flexible for different types of data.
+
+A simple XML example:
+
+```xml
+<bookstore>
+  <book>
+    <title lang="en">The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <year>1925</year>
+  </book>
+</bookstore>
+```
+
+Common use cases of XML include:
+- Data interchange between systems (e.g., web services like SOAP).
+- Configuration files (e.g., for software applications).
+- RSS feeds for content syndication.
+  
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+JSON
+
+**JSON** (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. Despite its name, JSON is language-independent and is used extensively beyond JavaScript. It is commonly used to transmit data between a server and a client in web applications and APIs.
+
+### Key Features of JSON:
+1. **Human-Readable**: JSON uses a simple syntax that’s easy for humans to understand.
+2. **Lightweight**: It has minimal overhead, making it efficient for data exchange over networks.
+3. **Language Independent**: Although it was originally based on JavaScript, JSON can be used in many other programming languages such as Python, Java, C#, and more.
+4. **Self-Descriptive**: Similar to XML, JSON data is organized in a way that describes the structure and data being transferred.
+5. **Data Types**: JSON supports basic data types like strings, numbers, booleans, arrays, and objects.
+
+### JSON Syntax:
+JSON represents data as **key-value pairs**, where keys are always strings, and values can be various data types.
+
+#### Example of JSON Structure:
+```json
+{
+  "name": "Alice",
+  "age": 30,
+  "isStudent": false,
+  "courses": ["Math", "Science"],
+  "address": {
+    "street": "123 Main St",
+    "city": "Anytown"
+  }
+}
+```
+
+### Key Components of JSON:
+
+1. **Objects**:
+   - Represented by curly braces `{}`.
+   - Contain key-value pairs, where each key is a string, and the value can be a string, number, boolean, array, or another object.
+   - Example:
+     ```json
+     {
+       "name": "Alice",
+       "age": 30
+     }
+     ```
+
+2. **Arrays**:
+   - Represented by square brackets `[]`.
+   - Contain a list of values, which can be strings, numbers, booleans, arrays, or objects.
+   - Example:
+     ```json
+     {
+       "courses": ["Math", "Science", "History"]
+     }
+     ```
+
+3. **Strings**:
+   - Represented by double quotes around text.
+   - Example: `"Hello World"`
+
+4. **Numbers**:
+   - Can be integers or floating-point numbers.
+   - Example: `25`, `3.14`
+
+5. **Booleans**:
+   - Represent `true` or `false`.
+   - Example: `true`, `false`
+
+6. **Null**:
+   - Represents a null value.
+   - Example: `null`
+
+### JSON vs XML:
+While both JSON and XML are used for data exchange, JSON has become more popular due to its simplicity and efficiency. Here's a brief comparison:
+
+| **Feature**           | **JSON**                               | **XML**                                |
+|-----------------------|----------------------------------------|----------------------------------------|
+| **Readability**        | Simple and concise                     | More verbose, uses closing tags        |
+| **Data Type Support**  | Supports strings, numbers, booleans, arrays, objects | Typically uses strings, attributes for data types |
+| **Parsing Speed**      | Faster and easier to parse             | Slower and more complex to parse       |
+| **Syntax Overhead**    | Lightweight with minimal syntax        | Heavier due to opening/closing tags    |
+| **Use of Attributes**  | No attribute concept (only key-value pairs) | Attributes and elements for data      |
+| **Usage**              | Common in modern web applications and APIs | Common in legacy systems and document-centric data |
+
+### Example: JSON in a REST API:
+In a REST API, data is typically exchanged in JSON format. Here’s an example of a simple request and response in JSON:
+
+**Request:**
+```json
+POST /api/users
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "age": 28
+}
+```
+
+**Response:**
+```json
+{
+  "userId": 101,
+  "name": "John Doe",
+  "email": "john@example.com",
+  "age": 28,
+  "status": "created"
+}
+```
+
+### Use Cases of JSON:
+1. **Data Exchange**: Commonly used for exchanging data between a server and a client in web applications.
+2. **Configuration Files**: JSON is often used to store configuration data in applications (e.g., `.json` files in JavaScript-based projects).
+3. **Storing Simple Data**: Many databases, like MongoDB, use JSON-like documents to store data.
+4. **Serialization**: JSON is widely used to serialize and deserialize objects when transferring data between different systems.
+
+### JSON Tools and Libraries:
+- **JSON Parser**: Many programming languages (e.g., Python, JavaScript, Java, PHP) provide built-in libraries to parse and generate JSON data.
+- **Example in Python**:
+  ```python
+  import json
+
+  # Parsing JSON string
+  json_data = '{"name": "Alice", "age": 30}'
+  parsed_data = json.loads(json_data)
+  print(parsed_data["name"])  # Output: Alice
+
+  # Creating JSON from a dictionary
+  data = {"name": "Bob", "age": 25}
+  json_string = json.dumps(data)
+  print(json_string)  # Output: {"name": "Bob", "age": 25}
+  ```
+
+JSON has become the de facto standard for web APIs and data interchange due to its simplicity, readability, and compatibility with modern programming environments. Would you like to dive into a specific JSON use case or implementation?
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+mock api
+
+https://mockapi.io/
+
+
+https://designer.mocky.io/design
+
+https://run.mocky.io/v3/09643861-e9d0-4026-944b-a1c1bdebd08e
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+GET 
+https://66f505989aa4891f2a238797.mockapi.io/Students
+
+DELETE
+https://66f505989aa4891f2a238797.mockapi.io/Students/1
+
+PUT
+https://66f505989aa4891f2a238797.mockapi.io/Students/21
+
+body- raw
+{
+    "firstname": "1neekenduku ra ungamma First Name ni ra ungaa",
+    "lastname": "1Cheppanu ra ungaaLast Name ni ra ungaa",
+    "country": "111country ra ungaa"
+}
+
+
+results
+
+{
+    "firstname": "1neekenduku ra ungamma First Name ni ra ungaa",
+    "lastname": "1Cheppanu ra ungaaLast Name ni ra ungaa",
+    "title": "title ra ungaa",
+    "country": "111country ra ungaa",
+    "id": "2"
+}
+
+PATCH
+https://66f505989aa4891f2a238797.mockapi.io/Students/4
+
+{
+    "firstname": "5Lamar",
+    "id": "4"
+}
+
+
+POST 
+
+https://66f505989aa4891f2a238797.mockapi.io/Students
+
+Body
+
+{
+    "firstname": "125Lamar",
+    "lastname": "412Kertzmann",
+    "title": "1234Dynamic Tactics Engineer",
+    "country": "1234Mali",
+    "id": "1234"
+}
+
+
+Scripts,Tests
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+PUT VS PATCH 
+
+
+Both **PUT** and **PATCH** are HTTP methods used in web APIs (especially RESTful APIs) to update resources, but they work in different ways. Here's a comparison of the two:
+
+### 1. **PUT**:
+- **Purpose**: Replaces the entire resource with the new data provided. If a resource already exists at the given URL, it is updated. If it doesn't exist, a new resource may be created depending on the API design.
+- **Idempotent**: Repeatedly calling PUT with the same data results in the same resource state. If you send the same PUT request multiple times, the result will always be the same.
+- **Request Body**: Must contain the complete representation of the resource. All fields must be included, even if only some are being updated.
+  
+**Example of a PUT Request**:
+```http
+PUT /users/123
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "age": 30
+}
+```
+If this request is sent, the entire user resource (ID 123) is updated with the data provided. All fields (`name`, `email`, `age`) must be included, even if only the name or email is being changed.
+
+### 2. **PATCH**:
+- **Purpose**: Partially updates a resource. Only the fields provided in the request are modified, and other fields remain unchanged.
+- **Not Necessarily Idempotent**: PATCH is not strictly idempotent because applying a PATCH request with partial updates may have different effects based on previous updates, depending on the API design.
+- **Request Body**: Contains only the fields that need to be updated.
+
+**Example of a PATCH Request**:
+```http
+PATCH /users/123
+Content-Type: application/json
+
+{
+  "email": "newemail@example.com"
+}
+```
+In this case, only the `email` field is updated, while other fields like `name` and `age` remain unchanged.
+
+### Key Differences Between PUT and PATCH:
+
+| **Feature**              | **PUT**                                                | **PATCH**                                             |
+|--------------------------|--------------------------------------------------------|-------------------------------------------------------|
+| **Update Type**           | Replaces the entire resource                           | Partially updates the resource                        |
+| **Idempotency**           | Idempotent (repeating the request has the same effect) | Not necessarily idempotent (depends on the resource)  |
+| **Required Data**         | Complete representation of the resource                | Only the data fields that need to be updated          |
+| **Common Use Case**       | When the client has the entire resource and wants to update or replace it | When only specific fields need to be modified         |
+| **Data Integrity**        | The entire resource needs to be sent, ensuring consistency | Only the required changes are sent, which can be more efficient |
+
+### When to Use PUT:
+- Use PUT when you want to update or replace the entire resource.
+- Example: Modifying the details of a user profile where all the data is known.
+
+### When to Use PATCH:
+- Use PATCH when you want to partially update a resource.
+- Example: Updating a user's email address without changing their name or other attributes.
+
+### Summary:
+
+- **PUT**: Used to replace an entire resource. If a field is missing, it might be deleted or reset based on the API's behavior.
+- **PATCH**: Used to partially modify a resource, leaving other fields unchanged. It's more efficient when only certain fields need updating.
+
+Would you like an example in code or an explanation of how these methods are implemented in different APIs?
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Status Codes 
+
+Here are common HTTP status codes with concise descriptions:
+
+### **1xx: Informational**
+- **100 Continue**: Server received request headers, client should proceed.
+- **101 Switching Protocols**: Server switches protocols as requested by the client.
+
+### **2xx: Success**
+- **200 OK**: Request succeeded.
+- **201 Created**: Resource successfully created.
+- **202 Accepted**: Request accepted, but processing not completed.
+- **204 No Content**: Request successful, but no content returned.
+
+### **3xx: Redirection**
+- **301 Moved Permanently**: Resource has been moved permanently.
+- **302 Found**: Resource temporarily located at a different URI.
+- **304 Not Modified**: Cached version of the resource is still valid.
+
+### **4xx: Client Errors**
+- **400 Bad Request**: The request is malformed or invalid.
+- **401 Unauthorized**: Authentication required.
+- **403 Forbidden**: Server refuses to fulfill the request.
+- **404 Not Found**: Requested resource not found.
+- **405 Method Not Allowed**: HTTP method not supported for the resource.
+- **408 Request Timeout**: Server timed out waiting for the request.
+
+### **5xx: Server Errors**
+- **500 Internal Server Error**: Generic server error.
+- **502 Bad Gateway**: Invalid response from upstream server.
+- **503 Service Unavailable**: Server is temporarily unavailable.
+- **504 Gateway Timeout**: Server didn’t receive a timely response from the upstream server.
+
+These codes are used by web servers to communicate the status of HTTP requests.
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Scripts for Get/1 request
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response time is good",function(){
+pm.expect(pm.response.responseTime).to.below(3000);
+});
+
+
+pm.test("Correct Student First Name",function(){
+    var jsondata=pm.response.json();
+    pm.expect(jsondata.firstname).to.eql("Pearlie");
+});
+
+pm.test("Correct Student Last Name",function(){
+    var jsondata=pm.response.json();
+    pm.expect(jsondata.lastname).to.eql("Becker");
+});
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+URL VS URI
+
+Uniform Resource Identifier (URI) and a Uniform Resource Location (URL)
+
+Both URIs and URLs are pointers to things like web pages, images, documents, or other online content.
+
+
+https://www.geeksforgeeks.org/difference-between-url-and-uri/
+
+
+url ex: https://www.geeksforgeeks.org/minimum-cost-graph
+
+What is URL (Uniform Resource Locator)? 
+URL (Uniform Resource Locator) is often defined as a string of characters that is directed to an address. It provides a way to retrieve the presentation of the physical location by describing its network location or primary access mechanism. 
+
+To locate a resource on the internet, use a Uniform Resource Locator or URL. It serves as both a resource reference and an access point. A unique resource—which could be an image, an HTML page, a CSS document, or anything else—is always displayed by a URL.
+
+
+What is URI (Uniform Resource Identifier)?
+Similar to URL, URI (Uniform Resource Identifier) is also a string of characters that identifies a resource on the web either by using location, name or both.
+It allows uniform identification of the resources. A URI is additionally grouped as a locator, a name or both which suggests it can describe a URL, URN or both.
+The term identifier within the URI refers to the prominence of the resources, despite the technique used. 
+
+
+
+Difference Between URL and URI
+
+URL
+URI
+
+URL is used to describe the identity of an item.
+URI provides a technique for defining the identity of an item.
+
+
+URL links a web page, a component of a web page or a program on a web page with the help of accessing methods like protocols.
+URI is used to distinguish one resource from other regardless of the method used.
+
+URL provides the details about what type of protocol is to be used.
+URI doesn’t contains the protocol specification.
+
+URL is a type of URI.
+URI is the superset of URL.
+
+It comprises of protocol, domain, path, hash, and so on.
+It comprises of scheme, authority, path, query and many more.
+
+Ex-https://www.geeksforgeeks.org/
+Ex- urn:isbn:0-294-56559-3
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+API Documentation 
+
+https://editor.swagger.io/
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
